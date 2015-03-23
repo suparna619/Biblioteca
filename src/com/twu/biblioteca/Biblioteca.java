@@ -9,26 +9,30 @@ import static java.nio.file.Paths.get;
  */
 public class Biblioteca {
     List<Book> books = new ArrayList<Book>();
-    Biblioteca(){
+    Biblioteca(String fileName){
         welcome();
-        createList();
+        createList(fileName);
     }
 
-    private void createList() {
+    private void createList(String fileName) {
         String allBooks = "";
-        String[] bookList;
+        FileReader fr = new FileReader("book.txt");
         try {
-            allBooks = FileReader.fileReader("book.txt");
+            allBooks = fr.fileReader();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        bookList = allBooks.split("\n");
+        registerBooks(allBooks);
+    }
+
+    private void registerBooks(String allBooks) {
+        String[] bookList;
+        bookList = allBooks.split(System.lineSeparator());
         for (String book : bookList){
             String[] bookDetails = book.split(" - ");
             books.add(new Book(bookDetails[0],bookDetails[1],bookDetails[2]));
         }
     }
-
 
     private void welcome() {
         System.out.println("Welcome to Biblioteca");
@@ -37,7 +41,7 @@ public class Biblioteca {
     public String showList() {
         String result = "";
         for (Book b : books)
-            result+= b.toString() + "\n";
-        return result   ;
+            result += b.bookDetails();
+        return result;
     }
 }

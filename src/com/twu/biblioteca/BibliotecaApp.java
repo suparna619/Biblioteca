@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        Biblioteca b = new Biblioteca();
+        Biblioteca b = new Biblioteca("book.txt");
         System.out.println("Books Available");
         Scanner s = new Scanner(System.in);
         for (;;){
@@ -14,7 +14,7 @@ public class BibliotecaApp {
             if(userChoice.equals("List"))
                 System.out.println( b.showList());
             else if(userChoice.equals("q")){
-                s.close();
+                System.exit(0);
                 break;
             }
             else{

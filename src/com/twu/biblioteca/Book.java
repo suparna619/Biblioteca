@@ -14,8 +14,7 @@ public class Book {
         this.yearOfPublish = yearOfPublish;
     }
 
-    @Override
-    public String toString() {
-        return name +" - "+ author +" - "+ yearOfPublish;
+    public String bookDetails() {
+        return name +" - "+ author + " - " + yearOfPublish + System.lineSeparator();
     }
 }
