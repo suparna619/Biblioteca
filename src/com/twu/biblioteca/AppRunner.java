@@ -7,14 +7,13 @@ import java.util.Scanner;
 */
 public class AppRunner {
     private Biblioteca biblioteca;
-    private Scanner scanner;
-
-    public AppRunner(Biblioteca biblioteca, Scanner scanner) {
+    public AppRunner(Biblioteca biblioteca) {
         this.biblioteca = biblioteca;
-        this.scanner = scanner;
     }
 
     public void runBibliotecaApp() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Books Available");
         for (;;){
             System.out.println("Enter List to see book list and q for quit");
             String userChoice = scanner.next();
@@ -29,4 +28,5 @@ public class AppRunner {
             }
         }
     }
+
 }
