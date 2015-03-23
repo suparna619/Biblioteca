@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        Biblioteca b = new Biblioteca("book.txt");
+        Biblioteca b = new Biblioteca("book.txt","members.txt");
         AppRunner runner = new AppRunner(b);
         runner.runBibliotecaApp();
     }

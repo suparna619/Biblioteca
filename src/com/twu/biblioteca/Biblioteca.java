@@ -4,30 +4,39 @@ import java.util.List;
 
 import static java.nio.file.Paths.get;
 
-/**
- * Created by suparnad on 3/21/2015.
- */
 public class Biblioteca {
-    List<Book> books = new ArrayList<Book>();
-    Biblioteca(String fileName){
+    private List<Book> books = new ArrayList<Book>();
+    private List<Member> members = new ArrayList<Member>();
+
+    Biblioteca(String bookDB, String memberDB){
         welcome();
-        createList(fileName);
+        registerBooks(bookDB);
+        registerMembers(memberDB);
     }
 
-    private void createList(String fileName) {
-        String allBooks = "";
-        FileReader fr = new FileReader("book.txt");
+    private String readDB(String DB) {
+        String content = "";
+        FileReader fr = new FileReader(DB);
         try {
-            allBooks = fr.fileReader();
+            content = fr.fileReader();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        registerBooks(allBooks);
+        return content;
     }
 
-    private void registerBooks(String allBooks) {
-        String[] bookList;
-        bookList = allBooks.split(System.lineSeparator());
+    private void registerMembers(String memberDB) {
+        String allMembers = readDB(memberDB);
+        String[] memberList = allMembers.split(System.lineSeparator());
+        for (String member : memberList){
+            String[] bookDetails = member.split(" - ");
+            members.add(new Member(bookDetails[0],bookDetails[1]));
+        }
+    }
+
+    private void registerBooks(String bookDB) {
+        String allBooks = readDB(bookDB);
+        String[] bookList = allBooks.split(System.lineSeparator());
         for (String book : bookList){
             String[] bookDetails = book.split(" - ");
             books.add(new Book(bookDetails[0],bookDetails[1],bookDetails[2]));
