@@ -44,9 +44,34 @@ public class ListHandeler {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    if(biblioteca.isValidBookName(bookName) && biblioteca.isBookAvailable(bookName)){
+                    if(biblioteca.isValidBookName(bookName) && biblioteca.isBookAvailable(bookName) && !biblioteca.findBook(bookName).isBorrowed()){
                         biblioteca.allotBook(bookName, memberId);
                         System.out.println("“Thank you! Enjoy the book”");
+                    }
+                    System.out.println("“That book is not available”");
+                }
+            }
+        });
+        commands.put("check_in", new Executable() {
+            @Override
+            public void execute() {
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                Scanner scanner = new Scanner(System.in);
+                System.out.println("Enter Id :\t");
+                String memberId = scanner.next();
+                if(biblioteca.findMember(memberId)!=null) {
+                    System.out.println("Enter book name :\t");
+                    String bookName = "";
+                    try {
+                        bookName = br.readLine();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Member member = biblioteca.findMember(memberId);
+                    if(biblioteca.isValidBookName(bookName) && !biblioteca.isBookAvailable(bookName) && biblioteca.findBook(bookName).isBorrowed()) {
+                        if(member.contains(biblioteca.findBook(bookName))){
+                            member.returnBook(biblioteca.findBook(bookName));
+                        }
                     }
                 }
             }

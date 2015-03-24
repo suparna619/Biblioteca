@@ -30,4 +30,8 @@ public class Member {
     public boolean contains(Book book) {
         return books.contains(book);
     }
+
+    public void returnBook(Book book) {
+
+    }
 }
