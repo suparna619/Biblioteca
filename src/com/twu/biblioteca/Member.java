@@ -9,10 +9,25 @@ import java.util.List;
 public class Member {
     private String name;
     private String id;
-    List<Book> books = new ArrayList<Book>();
+    private List<Book> books = new ArrayList<Book>();
     Member(String name, String id){
         this.id = id;
         this.name = name;
     }
+    public boolean isThisCustomer(String id) {
+        return this.id.equals(id);
+    }
 
+    public void borrow (Book book){
+        books.add(book);
+        try {
+            book.borrowing();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean contains(Book book) {
+        return books.contains(book);
+    }
 }

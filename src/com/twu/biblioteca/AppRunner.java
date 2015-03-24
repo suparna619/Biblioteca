@@ -28,6 +28,8 @@ public class AppRunner {
         sb.append(System.lineSeparator());
         sb.append("To see the book list : list");
         sb.append(System.lineSeparator());
+        sb.append("To check-out a book : check_out");
+        sb.append(System.lineSeparator());
         sb.append("To quit : quit");
         sb.append(System.lineSeparator());
         sb.append("----------------------------------------------");

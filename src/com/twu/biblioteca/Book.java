@@ -14,10 +14,6 @@ public class Book {
         this.yearOfPublish = yearOfPublish;
     }
 
-    public String bookDetails() {
-        return name +" - "+ author + " - " + yearOfPublish + System.lineSeparator();
-    }
-
     public boolean isBorrowed() {
         return isBorrowed;
     }
@@ -32,5 +28,15 @@ public class Book {
         if(isReturned) throw new Exception();
         this.isBorrowed = false;
         this.isReturned = true;
+    }
+
+    public boolean isThisBook(String bookName) {
+        return this.name.equals(bookName);
+    }
+
+    public String bookDetails() {
+        if(isBorrowed)
+            return "";
+        return name +" - "+ author + " - " + yearOfPublish + System.lineSeparator();
     }
 }

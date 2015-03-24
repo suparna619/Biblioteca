@@ -7,6 +7,7 @@ import static java.nio.file.Paths.get;
 public class Biblioteca {
     private List<Book> books = new ArrayList<Book>();
     private List<Member> members = new ArrayList<Member>();
+    private boolean n;
 
     Biblioteca(String bookDB, String memberDB){
         welcome();
@@ -52,5 +53,36 @@ public class Biblioteca {
         for (Book b : books)
             result += b.bookDetails();
         return result;
+    }
+
+    public boolean isValidBookName(String bookName) {
+        for (Book book : books)
+            if(book.isThisBook(bookName))
+                return true;
+        return false;
+    }
+    public Member findMember(String memberId){
+        for (Member member : members)
+            if(member.isThisCustomer(memberId))
+                return member;
+        return null;
+    }
+
+    public boolean isBookAvailable(String bookName) {
+        for (Book book : books)
+            if (book.isThisBook(bookName))
+                return true;
+        return false;
+    }
+
+    public Book findBook(String bookName) {
+        for (Book book : books)
+            if(book.isThisBook(bookName))
+                return book;
+        return null;
+    }
+
+    public void allotBook(String bookName, String memberId) {
+        findMember(memberId).borrow(findBook(bookName));
     }
 }
