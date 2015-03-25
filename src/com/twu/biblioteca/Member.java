@@ -6,12 +6,18 @@ import java.util.List;
 
 public class Member {
     private String name;
+    private String email;
+    private String phNo;
+    private String libraryId;
     private String id;
     private List<Book> books = new ArrayList<Book>();
     private List<Movie> movies = new ArrayList<Movie>();
 
-    Member(String name, String id){
-        this.id = id;
+    Member(String name, String email, String phNo, String libraryId, String password){
+        this.email = email;
+        this.phNo = phNo;
+        this.libraryId = libraryId;
+        this.id = password;
         this.name = name;
     }
     public boolean isThisCustomer(String id) {
@@ -60,5 +66,9 @@ public class Member {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public String getDetails() {
+        return name + " - " + email + " - " + phNo;
     }
 }

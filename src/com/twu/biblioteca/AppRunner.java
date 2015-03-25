@@ -38,6 +38,8 @@ public class AppRunner {
         sb.append(System.lineSeparator());
         sb.append("To check-in a movie : check_in_movie");
         sb.append(System.lineSeparator());
+        sb.append("To check your details : check_details");
+        sb.append(System.lineSeparator());
         sb.append("To quit : quit");
         sb.append(System.lineSeparator());
         sb.append("----------------------------------------------");

@@ -19,13 +19,14 @@ public class LibraryIntialiazer {
         }
         return content;
     }
+
     public List<Member> registerMembers(String memberDB) {
         List<Member> members = new ArrayList<Member>();
         String allMembers = readDB(memberDB);
         String[] memberList = allMembers.split(System.lineSeparator());
         for (String member : memberList) {
-            String[] bookDetails = member.split(" - ");
-            members.add(new Member(bookDetails[0], bookDetails[1]));
+            String[] memberDetails = member.split(" - ");
+            members.add(new Member(memberDetails[0], memberDetails[1], memberDetails[2], memberDetails[3],memberDetails[4]));
         }
         return members;
     }
