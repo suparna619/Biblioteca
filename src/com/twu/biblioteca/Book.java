@@ -14,6 +14,9 @@ public class Book {
         this.yearOfPublish = yearOfPublish;
     }
 
+    public Book() {
+    }
+
     public boolean isBorrowed() {
         return isBorrowed;
     }
@@ -34,7 +37,7 @@ public class Book {
         return this.name.equals(bookName);
     }
 
-    public String bookDetails() {
+    public String details() {
         if(isBorrowed)
             return "";
         return name +" - "+ author + " - " + yearOfPublish + System.lineSeparator();

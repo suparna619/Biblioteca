@@ -1,6 +1,5 @@
 package com.twu.biblioteca;
 
-import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,7 +9,7 @@ public class BibliotecaTest {
     private Biblioteca b;
     @Before
     public void setUp() {
-        b = new Biblioteca("book.txt", "members.txt");
+        b = new Biblioteca("book.txt", "members.txt", "members.txt");
     }
     @Test
     public void test_showListGivesAllTheBookList() {

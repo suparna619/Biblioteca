@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class BookTest extends TestCase {
     @Test
-    public void testIsBorrowedReturnsFalseIfAnyBookIsBorrowed(){
+    public void testIsBorrowedReturnsFalseIfAnyBookIsNotBorrowed(){
         Book refactoring = new Book("Refactoring", "Martin Fowler", "2006");
         assertFalse(refactoring.isBorrowed());
     }
@@ -28,7 +28,7 @@ public class BookTest extends TestCase {
     }
 
     @Test
-    public void testIsBorrowedbecomefalseAfterReturningABook(){
+    public void testIsBorrowedBecomefalseAfterReturningABook(){
         Book refactoring = new Book("Refactoring", "Martin Fowler", "2006");
         assertFalse(refactoring.isBorrowed());
         boolean falseMove = false;

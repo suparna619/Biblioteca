@@ -9,7 +9,6 @@ public class LibraryIntialiazer {
     public LibraryIntialiazer(Biblioteca biblioteca) {
         this.biblioteca = biblioteca;
     }
-
     public String readDB(String DB) {
         String content = "";
         FileReader fr = new FileReader(DB);
@@ -20,7 +19,6 @@ public class LibraryIntialiazer {
         }
         return content;
     }
-
     public List<Member> registerMembers(String memberDB) {
         List<Member> members = new ArrayList<Member>();
         String allMembers = readDB(memberDB);
@@ -31,7 +29,6 @@ public class LibraryIntialiazer {
         }
         return members;
     }
-
     public List<Book> registerBooks(String bookDB) {
         String allBooks = readDB(bookDB);
         List<Book> books = new ArrayList<Book>();
@@ -42,4 +39,16 @@ public class LibraryIntialiazer {
         }
         return books;
     }
+
+    public List<Movie> registerMovies(String movieDB) {
+        String allMovies = readDB(movieDB);
+        List<Movie> movies = new ArrayList<Movie>();
+        String[] movieList = allMovies.split(System.lineSeparator());
+        for (String movie : movieList) {
+            String[] movieDetail = movie.split(" - ");
+            movies.add(new Movie(movieDetail[0], movieDetail[1], movieDetail[2],movieDetail[3]));
+        }
+        return movies;
+    }
+
 }

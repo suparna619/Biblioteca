@@ -26,7 +26,9 @@ public class AppRunner {
         sb.append(System.lineSeparator());
         sb.append("----------------------");
         sb.append(System.lineSeparator());
-        sb.append("To see the book list : list");
+        sb.append("To see the book list : book_list");
+        sb.append(System.lineSeparator());
+        sb.append("To see the movie list : movie_list");
         sb.append(System.lineSeparator());
         sb.append("To check-out a book : check_out");
         sb.append(System.lineSeparator());

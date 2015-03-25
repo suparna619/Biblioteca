@@ -13,7 +13,7 @@ public class ListHandeler {
     }
 
     private void createCommand() {
-        commands.put("list", new Executable() {
+        commands.put("book_list", new Executable() {
             @Override
             public void execute() {
                 System.out.println(biblioteca.showList());
@@ -27,6 +27,12 @@ public class ListHandeler {
         });
         commands.put("check_out", new CheckOut(biblioteca).invoke());
         commands.put("check_in", new CheckIn(biblioteca).invoke());
+        commands.put("movie_list", new Executable() {
+            @Override
+            public void execute() {
+                System.out.println(biblioteca.showMovieList());
+            }
+        });
     }
 
     public void executeCommand(String userChoice) {
