@@ -50,8 +50,9 @@ public class Biblioteca {
 
     public String showList() {
         String result = "";
-        for (Book b : books)
+        for (Book b : books){
             result += b.bookDetails();
+        }
         return result;
     }
 

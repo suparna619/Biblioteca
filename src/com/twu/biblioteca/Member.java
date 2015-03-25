@@ -32,6 +32,11 @@ public class Member {
     }
 
     public void returnBook(Book book) {
-
+        books.remove(book);
+        try {
+            book.returnBook();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

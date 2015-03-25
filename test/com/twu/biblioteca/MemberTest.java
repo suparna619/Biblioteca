@@ -24,6 +24,9 @@ public class MemberTest extends TestCase {
         m.borrow(book);
         assertTrue(m.contains(book));
         assertTrue(book.isBorrowed());
+        m.returnBook(book);
+        assertFalse(m.contains(book));
+        assertFalse(book.isBorrowed());
     }
 
 }

@@ -15,7 +15,7 @@ public class AppRunner {
         StringBuilder sb = createBanner();
         while (true){
             System.out.println(sb);
-            String userChoice = scanner.next();
+            String userChoice = scanner.nextLine();
             lh.executeCommand(userChoice);
         }
     }
