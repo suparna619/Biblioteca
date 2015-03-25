@@ -38,12 +38,4 @@ public class BibliotecaTest {
         assertNull(b.findMember("6"));
     }
 
-    @Test
-    public void testIsValidBookReturnsTrueIfTheBookIsPresentInTheLibrary(){
-        assertTrue(b.isValidBookName("Ramayana"));
-    }
-    @Test
-    public void testIsValidBookReturnsFalseIfTheBookIsNotPresentInTheLibrary(){
-        assertFalse(b.isValidBookName("Story of Ram"));
-    }
 }

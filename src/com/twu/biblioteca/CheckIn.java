@@ -24,11 +24,14 @@ public class CheckIn {
                     String bookName = scanner.nextLine();
                     Member member = biblioteca.findMember(memberId);
                     Book book = biblioteca.findBook(bookName);
-                    if(biblioteca.isValidBookName(bookName) && book.isBorrowed()) {
+                    if(book!=null && book.isBorrowed()) {
                         if(member.contains(book)){
                             member.returnBook(biblioteca.findBook(bookName));
+                            System.out.println("“Thank you for returning the book.”");
+                            return;
                         }
                     }
+                    System.out.println("“That is not a valid book to return.”");
                 }
             }
         };

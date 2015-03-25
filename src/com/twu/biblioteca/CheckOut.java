@@ -22,7 +22,8 @@ public class CheckOut {
                 if(biblioteca.findMember(memberId)!=null) {
                     System.out.println("Enter book name :\t");
                     String bookName = scanner.nextLine();
-                    if(biblioteca.isValidBookName(bookName) && biblioteca.isBookAvailable(bookName) && !biblioteca.findBook(bookName).isBorrowed()){
+                    Book book = biblioteca.findBook(bookName);
+                    if(book!=null && !biblioteca.findBook(bookName).isBorrowed()){
                         biblioteca.allotBook(bookName, memberId);
                         System.out.println("“Thank you! Enjoy the book”");
                         return;
