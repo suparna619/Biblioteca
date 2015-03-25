@@ -9,7 +9,7 @@ public class BibliotecaTest {
     private Biblioteca b;
     @Before
     public void setUp() {
-        b = new Biblioteca("book.txt", "members.txt", "members.txt");
+        b = new Biblioteca("book.txt", "members.txt", "movies.txt");
     }
     @Test
     public void test_showListGivesAllTheBookList() {
@@ -18,6 +18,17 @@ public class BibliotecaTest {
                 "Ramayana - Maharishi Balmiki - 2010" + System.lineSeparator() +
                 "Five Point Someone - Chetan Bhagat - 2007" + System.lineSeparator();
         String actual = b.showList();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void test_showMovieListGivesAllTheMovieList() {
+        String expected = "Lagan - Ashutosh Gowariker - 2001 - 8.0" + System.lineSeparator() +
+                "3 Idiots - Rajkumar Hirani - 2009 - 8.5" + System.lineSeparator() +
+                "Water - Deepa Mehta - 2005 - 7.2" + System.lineSeparator() +
+                "Gran Torino - Clint Eastwood - 2008 - 7.7" + System.lineSeparator() +
+                "Terminator 2: Judgment Day - James Cameron - 1991 - 8.0" + System.lineSeparator();
+        String actual = b.showMovieList();
         assertEquals(expected, actual);
     }
 
