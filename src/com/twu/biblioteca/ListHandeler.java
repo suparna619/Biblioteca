@@ -30,7 +30,11 @@ public class ListHandeler {
     }
 
     public void executeCommand(String userChoice) {
-        commands.get(userChoice).execute();
+        try {
+            commands.get(userChoice).execute();
+        }catch (Exception e){
+            System.out.println("Opps!!!!Wrong Option entered - Please choose a Valid Option");
+        }
     }
 
 }

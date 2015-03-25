@@ -3,9 +3,7 @@ package com.twu.biblioteca;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by suparnad on 3/23/2015.
- */
+
 public class Member {
     private String name;
     private String id;
