@@ -30,9 +30,13 @@ public class AppRunner {
         sb.append(System.lineSeparator());
         sb.append("To see the movie list : movie_list");
         sb.append(System.lineSeparator());
-        sb.append("To check-out a book : check_out");
+        sb.append("To check-out a book : check_out_book");
         sb.append(System.lineSeparator());
-        sb.append("To check-in a book : check_in");
+        sb.append("To check-in a book : check_in_book");
+        sb.append(System.lineSeparator());
+        sb.append("To check-out a movie : check_out_movie");
+        sb.append(System.lineSeparator());
+        sb.append("To check-in a movie : check_in_movie");
         sb.append(System.lineSeparator());
         sb.append("To quit : quit");
         sb.append(System.lineSeparator());

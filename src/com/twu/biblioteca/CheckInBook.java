@@ -3,10 +3,10 @@ package com.twu.biblioteca;
 import java.util.Scanner;
 
 
-public class CheckIn {
+public class CheckInBook {
     private final Biblioteca biblioteca;
 
-    public CheckIn(Biblioteca biblioteca) {
+    public CheckInBook(Biblioteca biblioteca) {
         this.biblioteca = biblioteca;
     }
 

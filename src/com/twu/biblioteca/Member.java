@@ -8,6 +8,8 @@ public class Member {
     private String name;
     private String id;
     private List<Book> books = new ArrayList<Book>();
+    private List<Movie> movies = new ArrayList<Movie>();
+
     Member(String name, String id){
         this.id = id;
         this.name = name;
@@ -32,7 +34,29 @@ public class Member {
     public void returnBook(Book book) {
         books.remove(book);
         try {
-            book.returnBook();
+            book.returnProduct();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void borrowMovie(Movie movie) {
+        movies.add(movie);
+        try {
+            movie.borrowing();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean hasMovie(Movie movie) {
+        return movies.contains(movie);
+    }
+
+    public void returnMovie(Movie movie) {
+        movies.remove(movie);
+        try {
+            movie.returnProduct();
         } catch (Exception e) {
             e.printStackTrace();
         }

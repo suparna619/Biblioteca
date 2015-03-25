@@ -42,7 +42,18 @@ public class Biblioteca {
                 return book;
         return null;
     }
+    public Movie findMovie(String movieName) {
+        for (Movie movie : movies)
+            if(movie.isThisMovie(movieName))
+                return movie;
+        return null;
+    }
+
     public void allotBook(String bookName, String memberId) {
         findMember(memberId).borrow(findBook(bookName));
+    }
+
+    public void allotMovie(String movieName, String memberId) {
+        findMember(memberId).borrowMovie(findMovie(movieName));
     }
 }

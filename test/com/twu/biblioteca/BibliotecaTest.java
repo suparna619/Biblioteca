@@ -38,6 +38,25 @@ public class BibliotecaTest {
         assertTrue(b.findBook("Wings of Fire").isBorrowed());
         assertTrue(b.findMember("1").contains(b.findBook("Wings of Fire")));
     }
+
+    @Test
+    public void findBookGivesTheBookIfItHasTheBook(){
+        Book book = b.findBook("Ramayana");
+        assertTrue(book.isThisBook("Ramayana"));
+    }
+
+    @Test
+    public void findMovieGivesTheMovieIfItHasTheMovie(){
+        Movie movie = b.findMovie("Lagan");
+        assertTrue(movie.isThisMovie("Lagan"));
+    }
+
+    @Test
+    public void IfAMovieIsAvailableThenAnyMemberCanBorrowIt(){
+        b.allotMovie("Lagan", "1");
+        assertTrue(b.findMovie("Lagan").isBorrowed());
+        assertTrue(b.findMember("1").hasMovie(b.findMovie("Lagan")));
+    }
     @Test
     public void testIsThisMemberReturnsTrueIfValidIdIsGiven(){
         assertNotNull(b.findMember("1"));

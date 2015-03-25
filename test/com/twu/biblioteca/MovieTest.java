@@ -40,13 +40,13 @@ public class MovieTest extends TestCase {
         }
         assertTrue(lagan.isBorrowed());
         try {
-            lagan.returnBook();
+            lagan.returnProduct();
         } catch (Exception e) {
             e.printStackTrace();
         }
         assertFalse(lagan.isBorrowed());
         try {
-            lagan.returnBook();
+            lagan.returnProduct();
         } catch (Exception e) {
             falseMove = true;
         }

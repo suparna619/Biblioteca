@@ -39,13 +39,13 @@ public class BookTest extends TestCase {
         }
         assertTrue(refactoring.isBorrowed());
         try {
-            refactoring.returnBook();
+            refactoring.returnProduct();
         } catch (Exception e) {
             e.printStackTrace();
         }
         assertFalse(refactoring.isBorrowed());
         try {
-            refactoring.returnBook();
+            refactoring.returnProduct();
         } catch (Exception e) {
             falseMove = true;
         }

@@ -25,14 +25,17 @@ public class ListHandeler {
                 System.exit(0);
             }
         });
-        commands.put("check_out", new CheckOut(biblioteca).invoke());
-        commands.put("check_in", new CheckIn(biblioteca).invoke());
+        commands.put("check_out_book", new CheckOutBook(biblioteca).invoke());
+        commands.put("check_in_book", new CheckInBook(biblioteca).invoke());
         commands.put("movie_list", new Executable() {
             @Override
             public void execute() {
                 System.out.println(biblioteca.showMovieList());
             }
         });
+        commands.put("check_out_movie",new CheckOutMovie(biblioteca).invoke());
+        commands.put("check_in_movie", new CheckInMovie(biblioteca).invoke());
+
     }
 
     public void executeCommand(String userChoice) {
@@ -42,5 +45,4 @@ public class ListHandeler {
             System.out.println("Opps!!!!Wrong Option entered - Please choose a Valid Option");
         }
     }
-
 }

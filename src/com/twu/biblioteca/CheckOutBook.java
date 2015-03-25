@@ -3,10 +3,10 @@ package com.twu.biblioteca;
 import java.util.Scanner;
 
 
-public class CheckOut {
+public class CheckOutBook {
     private Biblioteca biblioteca;
 
-    public CheckOut(Biblioteca biblioteca) {
+    public CheckOutBook(Biblioteca biblioteca) {
         this.biblioteca = biblioteca;
     }
 
@@ -27,7 +27,7 @@ public class CheckOut {
             private boolean borrowBook(Scanner scanner, String memberId) {
                 String bookName = getBookName(scanner);
                 Book book = biblioteca.findBook(bookName);
-                if(ifValidBookAndIsBorrowed(bookName, book)){
+                if(ifValidBookAndIsBorrowed(book)){
                     biblioteca.allotBook(bookName, memberId);
                     System.out.println("“Thank you! Enjoy the book”");
                     return true;
@@ -35,8 +35,8 @@ public class CheckOut {
                 return false;
             }
 
-            private boolean ifValidBookAndIsBorrowed(String bookName, Book book) {
-                return book!=null && !biblioteca.findBook(bookName).isBorrowed();
+            private boolean ifValidBookAndIsBorrowed(Book book) {
+                return book!=null && !book.isBorrowed();
             }
 
             private String getBookName(Scanner scanner) {
