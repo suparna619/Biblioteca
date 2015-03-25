@@ -2,9 +2,7 @@ package com.twu.biblioteca;
 
 import java.util.Scanner;
 
-/**
- * Created by suparnad on 3/25/2015.
- */
+
 public class CheckIn {
     private final Biblioteca biblioteca;
 
